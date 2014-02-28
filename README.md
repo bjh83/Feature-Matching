@@ -20,9 +20,9 @@ collinear.
 
 Feature Description
 -------------------
-I am currently in the process of implementing a SIFT like feature matcher 
-described in Brown, Szeliski, and Winder's "Multi-Image Matching using 
-Multi-Scale Oriented Patches."
+I am currently in the process of implementing the MOPS feature 
+description/matching algorithm as described in Brown, Szeliski, and Winder's 
+"Multi-Image Matching using Multi-Scale Oriented Patches."
 
 Homography Computation
 ---------------------
