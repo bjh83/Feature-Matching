@@ -1,15 +1,20 @@
-% GenerateDescriptors
+clear all
+close all
+GenerateDescriptors
+pause;
 
 pc = [];
 for c_1 = 1 : 10
     for c_2 = 1 : 10
         for c_3 = 1 : 10
-            i_1 = LookupTable_1(c_1, c_2, c_3, 1);
-            j_1 = LookupTable_1(c_1, c_2, c_3, 2);
-            i_2 = LookupTable_2(c_1, c_2, c_3, 1);
-            j_2 = LookupTable_2(c_1, c_2, c_3, 2);
-            if i_1 ~= 0 && i_2 ~= 0
-                pc = [pc; i_1, j_1, i_2, j_2];
+            for n = 1 : 20
+                i_1 = LookupTable_1(c_1, c_2, c_3, n, 1);
+                j_1 = LookupTable_1(c_1, c_2, c_3, n, 2);
+                i_2 = LookupTable_2(c_1, c_2, c_3, n, 1);
+                j_2 = LookupTable_2(c_1, c_2, c_3, n, 2);
+                if i_1 ~= 0 && i_2 ~= 0
+                    pc = [pc; i_1, j_1, i_2, j_2];
+                end
             end
         end
     end

@@ -4,7 +4,7 @@ function LookupTable = MOPS(I, Index)
 
 H = Haar(8);
 b = 10;
-LookupTable = zeros(b, b, b, 2);
+LookupTable = zeros(b, b, b, 20, 2);
 for n = 1 : size(Index, 1);
     i = Index(n, 1);
     j = Index(n, 2);
@@ -17,6 +17,11 @@ for n = 1 : size(Index, 1);
     c_1 = max(min(round(d(2, 1) + 5), 10), 1);
     c_2 = max(min(round(d(1, 2) + 5), 10), 1);
     c_3 = max(min(round(d(2, 2) + 5), 10), 1);
-    LookupTable(c_1, c_2, c_3, 1) = i;
-    LookupTable(c_1, c_2, c_3, 2) = j;
+    for m = 1 : 20
+        if LookupTable(c_1, c_2, c_3, m, 1) == 0
+            LookupTable(c_1, c_2, c_3, m, 1) = i;
+            LookupTable(c_1, c_2, c_3, m, 2) = j;
+            break;
+        end
+    end
 end
