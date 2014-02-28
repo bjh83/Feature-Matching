@@ -10,13 +10,13 @@ Feature Detection
 -----------------
 I use a simple Forster-Harris feature detector (corner detector as some call it)
 to measure the 'goodness' of a point as the center of a feature. I then reduce
-the 'corner score map' by doing a non-addaptive non-maximal suppression 
-subsampling. Since the long term goal is to use point correspondences to create
+the 'corner score map' by doing a non-adaptive non-maximal suppression 
+sub-sampling. Since the long term goal is to use point correspondences to create
 a homography describing the relationship between the given images, I do not need
-a terribly large (or consistent) number of point correspondances; really, the
+a terribly large (or consistent) number of point correspondences; really, the
 things that matter are that the point correspondences are high quality (accurate
 and precise), that they cover a wide range of the image, and that they are not 
-colinear.
+collinear.
 
 Feature Description
 -------------------
@@ -24,9 +24,9 @@ I am currently in the process of implementing a SIFT like feature matcher
 described in Brown, Szeliski, and Winder's "Multi-Image Matching using 
 Multi-Scale Oriented Patches."
 
-Homograpy Computation
+Homography Computation
 ---------------------
 The plan here is to use the normalized Direct Linear Transformation (DLT) using
-the point correspondances computed above. I am pretty new to this stuff and I
+the point correspondences computed above. I am pretty new to this stuff and I
 have no idea how well this will work aside from some reading, so we will see how
 this goes and maybe try an iteratively based refinement of some sort.
